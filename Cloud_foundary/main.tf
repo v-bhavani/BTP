@@ -1,0 +1,68 @@
+# ------------------------------------------------------------------------------------------------------
+# Define the required providers for this module
+# ------------------------------------------------------------------------------------------------------
+terraform {
+  required_providers {
+    btp = {
+      source  = "sap/btp"
+      version = "1.0.0-rc1"
+    }
+    cloudfoundry = {
+      source  = "cloudfoundry-community/cloudfoundry"
+      version = "0.51.3"
+    }
+  }
+}
+ 
+provider "btp" {
+  globalaccount = var.globalaccount
+  username      = var.username
+  password      = var.password
+}
+ 
+provider "cloudfoundry" {
+    api_url = "https://api.cf.${var.region}.hana.ondemand.com"
+    user = var.username
+    password = var.password
+}
+# ------------------------------------------------------------------------------------------------------
+# Create the Cloud Foundry environment instance
+# ------------------------------------------------------------------------------------------------------
+resource "btp_subaccount_environment_instance" "cf" {
+  subaccount_id    = var.subaccount_id
+  name             = var.cf_name
+  environment_type = "cloudfoundry"
+  service_name     = "cloudfoundry"
+  plan_name        = var.plan_name
+  parameters = jsonencode({
+    instance_name = var.cf_name
+  })
+}
+# ------------------------------------------------------------------------------------------------------
+# Create the Cloud Foundry org users
+# ------------------------------------------------------------------------------------------------------
+resource "cloudfoundry_org_users" "org_users" {
+  for_each         = toset(concat(var.managers, var.auditors))
+  org              = btp_subaccount_environment_instance.cf.platform_id
+  managers         = var.managers
+  #user = var.billing_managers
+  auditors         = var.auditors
+}
+ 
+# ------------------------------------------------------------------------------------------------------
+# Create the Cloud Foundry space
+# ------------------------------------------------------------------------------------------------------
+resource "cloudfoundry_space" "space" {
+  name = var.space_name
+  org  = btp_subaccount_environment_instance.cf.platform_id
+}
+# ------------------------------------------------------------------------------------------------------
+# Create the CF users
+# ------------------------------------------------------------------------------------------------------
+resource "cloudfoundry_space_users" "space-users" {
+for_each         = toset(concat(var.sp_managers, var.sp_developer, var.auditors))
+  space      = cloudfoundry_space.space.id
+  managers   = var.sp_managers
+ developers = var.sp_developer
+ auditors   = var.auditors
+}

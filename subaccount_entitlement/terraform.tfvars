@@ -1,0 +1,8 @@
+globalaccount      = "basisexpertconsultingservicesbv"
+username           = "dinesh.kumar@basiscloudsolutions.com"
+password           = "Din1@3esh"
+region             = "us10"
+subaccount_name    = "BCS_01"
+entitlement_name   = "alert-notification"
+plan               = "free"
+parent_directory   = "c75a3c49-f365-485f-9397-c523d6dfd52f"

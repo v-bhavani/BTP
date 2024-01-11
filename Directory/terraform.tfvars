@@ -1,0 +1,8 @@
+globalaccount     = "basisexpertconsultingservicesbv"
+username          = "dinesh.kumar@basiscloudsolutions.com"
+password          = "Din1@3esh"
+costcenter         = "1234567890"
+architect          = "user1@basiscloudsolutions.com"
+owner              = "user1@basiscloudsolutions.com"
+team               = "tfteam@basiscloudsolutions.com"
+parent_directory   = "BCS"
