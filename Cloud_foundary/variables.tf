@@ -35,10 +35,6 @@ variable "managers" {
   type        = list(string)
   description = "Defines the managers of the Space"
 }
-variable "billing_managers" {
-  type        = list(string)
-  description = "Defines the billing_managers of the Space"
-}
 variable "auditors" {
   type        = list(string)
   description = "Defines the email address of the auditors for the Space"
