@@ -46,3 +46,12 @@ resource "cloudfoundry_space" "space" {
   name = var.space_name
   org  = btp_subaccount_environment_instance.cf.platform_id
 }
+# ------------------------------------------------------------------------------------------------------
+# Create the CF users
+# ------------------------------------------------------------------------------------------------------
+resource "cloudfoundry_space_users" "space-users" {
+space      = cloudfoundry_space.space.id
+managers   = var.user
+developers = var.user
+auditors   = var.user
+}
