@@ -10,15 +10,6 @@ output "cf_instance_details" {
     plan_name        = btp_subaccount_environment_instance.cf.plan_name
   }
 }
-
-# Output the Cloud Foundry org details
-output "cf_org_details" {
-  value = {
-    org_id   = cloudfoundry_org_users.org_users.id
-    org_name = cloudfoundry_org_users.org_users.name
-  }
-}
-
 # Output the Cloud Foundry space details
 output "cf_space_details" {
   value = {
