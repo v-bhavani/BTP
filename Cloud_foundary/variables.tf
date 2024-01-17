@@ -13,7 +13,11 @@ variable "username" {
   type        = string
   sensitive   = true
 }
-
+variable "user" {
+  description = "BTP username"
+  type        = list(string)
+  sensitive   = true
+}
 variable "password" {
   description = "BTP user password"
   type        = string
@@ -30,22 +34,6 @@ variable "space_name" {
 variable "plan_name" {
   type        = string
   description = "Cloud Foundry Instance Name"
-}
-variable "managers" {
-  type        = list(string)
-  description = "Defines the managers of the Space"
-}
-variable "auditors" {
-  type        = list(string)
-  description = "Defines the email address of the auditors for the Space"
-}
-variable "sp_managers" {
-  type        = list(string)
-  description = "Defines the managers of the Space"
-}
-variable "sp_developer" {
-  type        = list(string)
-  description = "Defines the billing_managers of the Space"
 }
 variable "globalaccount" {
   description = "BTP global account"
