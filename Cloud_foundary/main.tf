@@ -38,31 +38,11 @@ resource "btp_subaccount_environment_instance" "cf" {
     instance_name = var.cf_name
   })
 }
-# ------------------------------------------------------------------------------------------------------
-# Create the Cloud Foundry org users
-# ------------------------------------------------------------------------------------------------------
-resource "cloudfoundry_org_users" "org_users" {
-  for_each         = toset(concat(var.managers, var.auditors))
-  org              = btp_subaccount_environment_instance.cf.platform_id
-  managers         = var.managers
-  #user = var.billing_managers
-  auditors         = var.auditors
-}
- 
+
 # ------------------------------------------------------------------------------------------------------
 # Create the Cloud Foundry space
 # ------------------------------------------------------------------------------------------------------
 resource "cloudfoundry_space" "space" {
   name = var.space_name
   org  = btp_subaccount_environment_instance.cf.platform_id
-}
-# ------------------------------------------------------------------------------------------------------
-# Create the CF users
-# ------------------------------------------------------------------------------------------------------
-resource "cloudfoundry_space_users" "space-users" {
-for_each         = toset(concat(var.sp_managers, var.sp_developer, var.auditors))
-  space      = cloudfoundry_space.space.id
-  managers   = var.sp_managers
- developers = var.sp_developer
- auditors   = var.auditors
 }
