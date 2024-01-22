@@ -6,4 +6,4 @@ subaccount_id       = "$tfoutputsub.subaccount_id.value"
 cf_name             = "$var.cf_name"
 space_name          = "$var.space_name"
 plan_name           = "$var.space_plan"
-user                = [$var.user]
+user                = "$var.user"
