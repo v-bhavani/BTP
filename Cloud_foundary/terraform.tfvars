@@ -3,7 +3,6 @@ region              = "$var.region"
 username            = "$var.username"
 password            = "$var.password"
 subaccount_id       = '${tfoutputsub.subaccount_id.value}'
-#subaccount_id       = "214f977c-e76b-498a-93fc-d7452fa38aa0"
 cf_name             = "$var.cf_name"
 space_name          = "$var.space_name"
 user                = [$var.user]
