@@ -31,10 +31,6 @@ variable "space_name" {
   type        = string
   description = "Cloud Foundry space Name"
 }
-variable "plan_name" {
-  type        = string
-  description = "Cloud Foundry Instance Name"
-}
 variable "globalaccount" {
   description = "BTP global account"
   type        = string
