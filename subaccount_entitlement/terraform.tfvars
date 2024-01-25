@@ -5,5 +5,5 @@ region             = "$var.region"
 subaccount_name    = "$var.subaccount_name"
 entitlement_name   = "$var.ent_name"
 plan               = "$var.plan"
-parent_directory   = '$tfoutputdir.directory_id.value'
+parent_directory   = $tfoutputdir.directory_id.value
 #parent_directory   = "5cd5539e-2b93-4b15-9887-58b737cfa66d"
