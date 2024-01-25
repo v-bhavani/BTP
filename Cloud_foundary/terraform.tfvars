@@ -7,4 +7,4 @@ subaccount_id       = "ef5b0241-c206-4d79-ab5c-6004bfeeee9c"
 cf_name             = "$var.cf_name"
 space_name          = "$var.space_name"
 plan_name           = "$var.space_plan"
-user                = "$var.user"
+user                = [$var.user]
