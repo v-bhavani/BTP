@@ -21,7 +21,7 @@ provider "btp" {
 }
  
 provider "cloudfoundry" {
-    api_url = "https://eu1.hana.ondemand.com"
+    api_url = "https://hana.ondemand.com"
     user = var.username
     password = var.password
 }
