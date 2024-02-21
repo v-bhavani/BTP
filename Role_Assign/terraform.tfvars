@@ -1,5 +1,5 @@
 subaccount_id = "$var.subaccount_id"
-global_account = "$var.globalaccount"
+globalaccount = "$var.globalaccount"
 username = "$var.username"
 password = "$var.password"
 role =  "$var.role"
