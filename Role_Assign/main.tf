@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "btp" {
-  globalaccount = var.globalaccount
+  globalaccount = var.global_account
   username      = var.username
   password      = var.password
 }
@@ -22,6 +22,6 @@ resource "btp_subaccount_role_collection_assignment" "role-assign" {
   subaccount_id        = var.subaccount_id
   role_collection_name = var.role
   user_name            = each.value
-  origin               = var.identityprovider
+  origin               = var.identity_provider
 }
 
