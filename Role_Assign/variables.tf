@@ -1,7 +1,7 @@
 variable "subaccount_id" {
     type = string
 }
-variable "global_account" {
+variable "globalaccount" {
     type = string
 }
 variable "username" {
