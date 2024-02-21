@@ -22,6 +22,6 @@ resource "btp_subaccount_role_collection_assignment" "role-assign" {
   subaccount_id        = var.subaccount_id
   role_collection_name = var.role
   user_name            = each.value
-  origin               = var.identity_provider
+  origin               = var.identityprovider
 }
 
