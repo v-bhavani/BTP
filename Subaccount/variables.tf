@@ -31,9 +31,3 @@ variable "password" {
   type        = string
   sensitive   = true
 }
-variable "entitlement_name" {
-  type        = string
-}
-variable "plan" {
-  type        = string
-}
