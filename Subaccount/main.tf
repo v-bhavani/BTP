@@ -26,12 +26,3 @@ resource "btp_subaccount" "subaccount" {
   region    = var.region
   parent_id = var.parent_directory
 }
-
-# ------------------------------------------------------------------------------------------------------
-# Enable Entitlement
-# ------------------------------------------------------------------------------------------------------
-resource "btp_subaccount_entitlement" "alert_notification_service" {
-  subaccount_id = btp_subaccount.subaccount.id
-  service_name  = var.entitlement_name
-  plan_name     = var.plan
-}
