@@ -1,4 +1,4 @@
-subaccount_id = "$var.subaccount_id"
+subaccount_id = "${tfoutputsub.directory_id.value}"
 globalaccount = "$var.globalaccount"
 username = "$var.username"
 password = "$var.password"
