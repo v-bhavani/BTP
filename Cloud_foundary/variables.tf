@@ -15,7 +15,7 @@ variable "username" {
 }
 variable "user" {
   description = "BTP username"
-  type        = list(string)
+  type        = string
   sensitive   = true
 }
 variable "password" {
