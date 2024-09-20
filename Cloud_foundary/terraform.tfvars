@@ -5,4 +5,4 @@ password            = "$var.password"
 subaccount_id       = "${tfsuboutputs.subaccount_id.value}"
 cf_name             = "$var.cf_name"
 space_name          = "$var.space_name"
-user                = [${var.space_user}]
+user                = "$var.user"
