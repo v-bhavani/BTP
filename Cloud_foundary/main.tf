@@ -2,11 +2,11 @@ terraform {
   required_providers {
     btp = {
       source  = "sap/btp"
-      version = "1.2.0"
+      version = "1.10.0"
     }
     cloudfoundry = {
       source  = "cloudfoundry-community/cloudfoundry"
-      version = "0.53.1"
+      version = "1.3.0"
     }
   }
 }
@@ -18,7 +18,7 @@ provider "btp" {
 }
  
 provider "cloudfoundry" {
-    api_url = "https://api.cf.${var.region}-001.hana.ondemand.com"
+    api_url = "https://api.cf.${var.region}.hana.ondemand.com"
     user = var.username
     password = var.password
 }
