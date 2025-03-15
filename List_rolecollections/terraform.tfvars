@@ -1,3 +1,3 @@
-globalaccount      = "basisexpertconsultingservicesbv"
-username           = "balajirs@basiscloudsolutions.com"
-password           = "Subala@1988"
+globalaccount      = "$var.globalaccount"
+username           = "$var.username"
+password           = "$var.password"
